@@ -1,0 +1,12 @@
+﻿@page "/"
+
+<h1>Hello, world!</h1>
+
+Welcome to your new app.
+
+<MButton OnClick="OnClick">连接MQTT</MButton>
+<div>当前传感器数据</div>
+<div><MLabel>@Textarea</MLabel></div>
+<div><MButton OnClick="() => LedOn(true)">Led开</MButton></div>
+<div><MButton OnClick="() => LedOn(false)">Led关</MButton></div>
+
