@@ -1,0 +1,44 @@
+﻿@page "/Login"
+<MCard Width="300" Class="mx-auto" Tile Elevation="0">
+    <MRow Align="AlignTypes.Center" Justify="JustifyTypes.Center">
+        <div class="text-center" style="margin-top:33%;">
+            <MImage Width="119.78" Height="41.47" Src="_content/Web.Rcl/image/logo.png" />
+        </div>
+
+        <MCard Elevation="0">
+            <MForm Model="_model"
+                   EnableValidation
+                   OnValidSubmit="HandleOnValidSubmit"
+                   Style="margin-top: 50px">
+
+
+                <MTextField Flat
+                            Solo
+                            Class="rounded-2"
+                            BackgroundColor="#F7F8FA"
+                            @bind-Value="_model.UserName"
+                            HideDetails="true"
+                            Placeholder="输入用户名" />
+                <MTextField Flat
+                            Solo
+                            Class="rounded-2"
+                            BackgroundColor="#F7F8FA"
+                            @bind-Value="_model.Password"
+                            HideDetails="true"
+                            Type="password"
+                            Placeholder="输入密码" />
+
+
+                <MButton Large
+                         Disabled="@(string.IsNullOrWhiteSpace(_model.UserName) || string.IsNullOrWhiteSpace(_model.Password))"
+                         Type="submit"
+                         Class="mt-5 rounded-pill"
+                         Block
+                         Dark
+                         Color="primary">确定</MButton>
+
+
+            </MForm>
+        </MCard>
+    </MRow>
+</MCard>
